@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font: 62.5%/1.6 system-ui, -apple-system, BlinkMacSystemFont, 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--colorBlack);
+  font-size: 1.6rem;
+  font-weight: 400;
+}

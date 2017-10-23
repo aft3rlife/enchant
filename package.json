@@ -1,0 +1,29 @@
+{
+  "name": "torque",
+  "version": "1.0.0",
+  "description": "It's CSS yo'",
+  "author": "Marc Boisvert <marc@boisvert.design>",
+  "license": "MIT",
+  "style": "src/torque.css",
+  "scripts": {
+    "dev": "webpack",
+    "prod": "NODE_ENV=production webpack"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "caniuse-lite": "^1.0.30000697",
+    "css-loader": "^0.28.7",
+    "cssnano": "^3.10.0",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "postcss": "^6.0.13",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "postcss-normalize": "^4.0.0",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1"
+  }
+}
