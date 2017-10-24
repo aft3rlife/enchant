@@ -1,8 +1,53 @@
-:root {
-  
-  /**
-   * Color
-   */
-  --colorBlack: #0a0a0a;
+/** Name:Variables
+ *  Description:     Variables that are used globally
+ *
+ *  Namespace:       `core`
+ *
+ *  ========================================================================
 
-}
+
+ *  Base
+ *  ======================================================================== */
+
+ :root {
+
+/**
+ * Greyscale
+ */
+--colorBlack: #0a0a0a;
+--colorGrey-100: #222831;
+--colorGrey-200: color(var(--colorGrey-100), tint(5%));
+--colorGrey-300: color(var(--colorGrey-100), tint(10%));
+--colorGrey-400: color(var(--colorGrey-100), tint(20%));
+--colorGrey-500: color(var(--colorGrey-100), tint(30%));
+--colorGrey-600: color(var(--colorGrey-100), tint(40%));
+--colorGrey-700: color(var(--colorGrey-100), tint(50%));
+--colorGrey-800: color(var(--colorGrey-100), tint(74%));
+--colorGrey-900: color(var(--colorGrey-100), tint(80%));
+--colorGrey-1000: color(var(--colorGrey-100), tint(94%));
+--colorWhite: #fff;
+
+/**
+ * Aliases for greyscale colors
+ */
+--greyDarker: var(--colorGrey-100);
+--greyDark: var(--colorGrey-200);
+--colorGrey: var(--colorGrey-300);
+--greyLight: var(--colorGrey-600);
+--greyLighter: var(--colorGrey-700);
+--greyLightest: var(--colorGrey-800);
+
+
+/**
+ * Swatch
+ */
+--colorBlue: #09f;
+--colorGreen: #0c9;
+--colorPurple: #96c;
+--colorRed: #f66;
+--colorYellow: #fce473;
+--colorOrange: #FF9800;
+--colorTeal: #09c09c;
+--colorPrimary: #5778C6;
+
+ }

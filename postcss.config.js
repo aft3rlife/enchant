@@ -1,6 +1,9 @@
 const postcssConfig = {
   plugins: {
     'postcss-import': {},
+    'postcss-custom-properties': {},
+    'postcss-color-function': {},
+    'postcss-nested': {},
     'postcss-cssnext': {},
     'postcss-normalize': {
       allowDuplicates: true
