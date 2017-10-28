@@ -1,0 +1,40 @@
+$dimensions = 16 24 32 48 64 96 128
+
+.image
+  display block
+  position relative
+  width 100%
+  height auto
+
+  // Ratio
+  &.image--square,
+  &.image--1x1,
+  &.image--4x3,
+  &.image--3x2,
+  &.image--16x9,
+  &.image--2x1
+    img
+      overlay()
+      height 100%
+      width 100%
+
+  &.image--square,
+  &.image--1x1
+    padding-top 100%
+
+  &.image--4x3
+    padding-top 75%
+
+  &.image--3x2
+    padding-top 66.6666%
+
+  &.image--16x9
+    padding-top 56.25%
+
+  &.image--2x1
+    padding-top 50%
+  // Sizes
+  for dimension in $dimensions
+    &.image--{dimension}x{dimension}
+      height dimension * .1rem
+      width dimension * .1rem

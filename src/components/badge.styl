@@ -1,0 +1,39 @@
+.badge
+  display inline-block
+  padding .1rem .5rem
+  background-color $color-grey-1000
+  border $core-border-width solid transparent
+  border-radius $core-radius
+  color $color-primary
+  font-size $font-tiny
+  font-weight 700
+  line-height 2.1rem
+  text-align center
+  text-decoration none
+  text-transform uppercase
+  vertical-align middle
+  white-space nowrap
+
+  &.badge--outline
+    background transparent
+    border-color $core-border-color
+    
+  &.badge--clear
+    background transparent
+    &:hover
+      background $color-grey-1000
+      text-decoration none
+
+  for name, color in colors
+    $color = color["color"]
+    $invert = color["invert"]
+
+    &.badge--{name}
+      background $color
+      border-color $color
+      color $invert
+
+      &.badge--outline
+        background transparent
+        color $color
+        border-color $color

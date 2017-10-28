@@ -2,7 +2,7 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve('src/torque.css'),
+  entry: path.resolve('src/torque.styl'),
   output: {
     path: path.resolve('dist'),
     filename: 'torque.css'
@@ -24,7 +24,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.styl$/,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -32,15 +32,14 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                importLoaders: 1,
-                sourceMap: true
+                importLoaders: 1
               }
             },
             {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: true
-              }
+              loader: 'postcss-loader'
+            },
+            {
+              loader: 'stylus-loader'
             }
           ]
         })

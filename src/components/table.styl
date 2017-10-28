@@ -1,0 +1,58 @@
+// Name:            Table
+// Description:     Styles for HTML table
+//
+// Component:       `table`
+//
+// Modifiers:       `table-bordered`
+//                  `table-striped`
+//                  `table-hover`
+//                  `table-small`
+//
+// States:          void
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+table
+  width 100%
+  border-collapse collapse
+  tr
+    th,
+    td
+      border .1rem solid $core-text-color
+      border-width 0 0 .1rem
+      padding 1.2rem 1.5rem
+      text-align left
+
+  thead
+    tr
+      th
+        font-size 1.1rem
+        font-weight 700
+        text-transform uppercase
+        
+  tbody
+    tr
+      th
+        font-weight 400
+        
+
+  &.bordered
+    tbody
+      tr
+        th,
+        td
+          border-width .1rem
+
+  &.highlight
+    tbody
+      tr
+        transition background-color .2s ease-in-out
+        &:hover
+            background-color $grey
+  
+  &.table--fixed
+    table-layout fixed

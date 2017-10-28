@@ -1,0 +1,97 @@
+// Name            Modal
+// Description     Styling for modal component
+//
+// Namespace       `modal`
+//
+// Modifiers       `modal--modifier`
+//
+// States          `modal--state`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Component Modal
+// ========================================================================
+
+.modal
+  align-items center
+  bottom 0
+  display none
+  justify-content center
+  left 0
+  opacity 0
+  overflow hidden
+  padding 2rem
+  position fixed
+  right 0
+  top 0
+
+  &:target,
+  &.active
+    display flex
+    opacity 1
+    z-index $z-index-4
+
+    .modal__overlay
+      background rgba($color-black, .6)
+      bottom 0
+      cursor default
+      display block
+      left 0
+      position absolute
+      right 0
+      top 0
+
+
+    .modal__container
+      max-width 64rem
+      z-index $z-index-0
+
+
+  &.modal__sm
+    .modal__container
+      max-width 32rem
+
+
+.modal__container
+  min-width 42rem
+  background $color-white
+  border-radius $core-radius
+  display block
+  padding 0
+  text-align left
+  shadow(1rem)
+
+  .modal__header
+    padding 2rem
+    border-radius $core-radius $core-radius 0 0
+
+    .modal__title
+      font-size $font-medium
+      margin 0
+
+    .modal__subtitle
+      font-size $font-small
+
+    for name, color in colors
+      $color = color["color"]
+      $invert = color["invert"]
+
+      &.modal__header--{name}
+        background-color: $color
+        color: $color-invert
+
+
+  .modal__body
+    max-height 50vh
+    overflow-y auto
+    padding 2rem
+    position relative
+
+  .modal__footer
+    padding 2rem
+    text-align right

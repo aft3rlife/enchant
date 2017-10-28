@@ -1,0 +1,149 @@
+// Name:            Hero
+// Description:     An eye-catching component
+//
+// Namespace:       `hero`
+//
+// Elements:        `hero__element`
+//
+// Modifiers:       `hero--modifier`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+
+// Component: hero
+// ========================================================================
+
+// Components
+
+.hero__buttons
+  margin-top 1.5rem
+  media(sm)
+    .btn
+      display flex
+      &:not(:last-child)
+        margin-bottom 0.75rem
+        
+  from(md)
+    display flex
+    margin-bottom 1rem
+    .btn:not(:last-child)
+      margin-right 1.5rem
+
+// Containers
+
+.hero__head,
+.hero__foot
+  flex-grow 0
+  flex-shrink 0
+
+.hero__body
+  flex-grow 1
+  flex-shrink 0
+  padding 3rem 1.5rem
+  // Responsiveness
+  from(md)
+    padding 6rem 0
+
+// Main container
+
+.hero
+  align-items stretch
+  background-color $color-grey-1000
+  display flex
+  position: relative
+  flex-direction column
+  justify-content space-between
+  .navbar
+    box-shadow 0 1px 0 alpha($color-grey-500, 0.3)
+    & .navbar__item, .navbar__item a, .navbar__item a:not(.btn)
+      color $core-text-color
+      &:hover,
+      &.active
+        color alpha($core-text-color, 0.9)
+  .tabs
+    ul
+      border-bottom none
+  // Colors
+  for name, color in colors
+    $color = color["color"]
+    $invert = color["invert"]
+    &.hero--{name}
+      background-color $color
+      color $invert
+      .title
+        color $invert
+      .subtitle
+        color alpha($invert, 0.9)
+        a:not(.btn),
+        strong
+          color $invert
+      .navbar
+        box-shadow 0 1px 0 alpha($invert, 0.2)
+        & .navbar__item, .navbar__item a, .navbar__item a:not(.btn)
+          color alpha($invert, 0.9)
+          &:hover,
+          &.active
+            color $invert
+      .tabs
+        a
+          color $invert
+          opacity 0.9
+          &:hover
+            opacity 1
+        li
+          &.active a
+            opacity 1
+        &.tabs--boxed,
+        &.tabs--toggle
+          a
+            color $invert
+            &:hover
+              background-color alpha($color-black, 0.1)
+          li.active a
+            &,
+            &:hover
+              background-color $invert
+              border-color $invert
+              color $color
+      // Modifiers
+      // &.tabs--bold
+      //   $gradient-top-left = darken(saturate(adjust-hue($color, -10deg), 10%), 10%)
+      //   $gradient-bottom-right = lighten(saturate(adjust-hue($color, 10deg), 5%), 5%)
+      //   background-image linear-gradient(141deg, $gradient-top-left 0%, $color 71%, $gradient-bottom-right 100%)
+      //   media(sm)
+      //     .navbar-menu
+      //       background-image linear-gradient(141deg, $gradient-top-left 0%, $color 71%, $gradient-bottom-right 100%)
+      // Responsiveness
+      media(sm)
+        .navbar-toggle
+          span
+            background-color $invert
+          &:hover
+            background-color alpha($color-black, 0.1)
+          &.active
+            span
+              background-color $invert
+        .navbar-menu
+          .navbar-item
+            border-top-color alpha($invert, 0.2)
+  // Sizes
+  &.hero--md
+    .hero__body
+      padding-bottom 9rem
+      padding-top 9rem
+  &.hero--lg
+    .hero__body
+      padding-bottom 18rem
+      padding-top 18rem
+  &.hero--fh
+    min-height 100vh
+    .hero__body
+      align-items center
+      display flex
+      & > .container
+        flex-grow 1
+        flex-shrink 1

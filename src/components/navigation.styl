@@ -1,0 +1,42 @@
+// Name:            Navbar
+// Description:     Styles for navigation bars
+//
+// Component:       `navbar`
+//
+// Modifiers:       ``
+//
+// States:          void
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$navbar-height = $core-nav-height
+
+// Component: navbar
+// ========================================================================
+
+.navbar
+  position: relative
+  height $navbar-height
+  z-index $z-index-10
+
+  .navbar__section
+    .navbar__item
+      padding 0 1rem
+      font-size $font-small
+      &:last-child
+        padding-right 0
+  
+  &.navbar--invert
+    background $color-primary
+    
+    .navbar__item
+      color $grey
+
+  // .nav-brand
+  //   font-size @font-size-lg
+  //   font-weight 400
+  //   text-decoration none

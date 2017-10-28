@@ -1,0 +1,99 @@
+// Name            Card
+// Description     Styles for Card
+//
+// Namespace       `.card`
+//
+// Modifiers       `.card--flat`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$card-border = $core-border-width solid $core-border-color
+$card-radius = $core-radius
+$card-spacer-x = 1.6rem
+$card-spacer-y = 1.2rem
+$card-img-overlay-padding = 1.25rem
+
+// Component Card
+// ========================================================================
+
+.card
+  position relative
+  word-wrap break-word
+  background $color-white
+  
+  .card__title
+    margin-bottom $card-spacer-y
+  
+  .card__subtitle
+    margin-top -($card-spacer-y)
+    margin-bottom 0
+    color $color-grey-700
+  
+  .card__body
+    padding $card-spacer-y $card-spacer-x
+    
+  .card__text
+    &:last-child
+      margin-bottom 0
+      
+  .collection:first-child
+    .collection__item:first-child
+      border-top-radius($card-radius)
+    
+  .collection:last-child
+    .collection__item:last-child
+      border-bottom-radius($card-radius)
+
+  .card__header
+    padding $card-spacer-y $card-spacer-x
+    margin-bottom 0
+    border-bottom $card-border
+    
+  .card__footer
+    border-top $card-border
+    
+  .card__image-overlay
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    padding $card-img-overlay-padding
+
+  .card__image
+    width 100%
+    
+  & ~ .card
+    margin-top 2rem
+
+.card__group
+  display flex
+  flex-direction column
+
+  .card
+    // Flexbugs #4 https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored
+    flex 1 0 0%
+    margin-bottom 0
+    // Temp
+    border-bottom $card-border
+    border-color $color-grey-1000
+
+    & ~ .card
+      margin-top 0
+
+    &:first-child
+      border-bottom-radius(0)
+
+    &:last-child
+      border-bottom none
+      border-top-radius(0)
+
+    &:not(:first-child):not(:last-child):not(:only-child)
+      border-radius 0
+
+    &:only-child
+      border-radius $card-border-radius

@@ -1,0 +1,53 @@
+// Name:            toast
+// Description:     ...
+//
+// Namespace:       `toast`
+//
+// Modifiers:       `toast-modifier`
+//
+// States:          `toast-state`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$toast-background = $color-white
+
+// Component: toast
+// ========================================================================
+
+.toast
+  padding 1.25rem 2rem
+  background-color $toast-background
+  color $core-text-color
+  border-radius $core-radius
+  vertical-align middle
+  white-space nowrap
+  z-index $z-index-10
+  core-shadow()
+  
+  &.with-close
+    padding-right 3rem
+
+  a:not(.btn)
+    color currentColor
+    text-decoration underline
+  
+  .btn
+    position absolute
+    top 0
+    right 0
+    width 2.4rem
+    height 2.4rem
+    padding 0
+    line-height 1.8
+    border-radius 0 $core-radius 0 $core-radius
+    
+  for name, color in colors
+    $color = color["color"]
+    $invert = color["invert"]
+    &.toast--{name}
+      background-color $color
+      color $color-white

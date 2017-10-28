@@ -1,0 +1,40 @@
+// FIXME:
+// Use .media as wrapper, .media__body as container. See card.styl
+
+.media
+  position relative
+  display flex
+  flex-direction row
+  min-width 0
+  word-wrap break-word
+
+  & .media
+    margin-top: 1rem
+    // padding-left: 1.6rem
+    // border-left: $core-border-width dotted $core-border-color
+
+    & .media
+      margin-top: 1.4rem
+
+      & + .media
+        margin-top: 0
+        padding-top: .6rem
+
+  & + .media
+    margin-top: 0
+    padding-top: 1rem
+
+    flex 1 1 auto
+
+.media__left,
+.media__right
+  flex 0 0 auto
+
+.media__left
+  margin-right 2rem
+
+.media__right
+  margin-left 2rem
+
+.media__content
+  flex 1 1 auto

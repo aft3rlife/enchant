@@ -1,0 +1,140 @@
+// Name:            Variables
+// Description:     Variables that are used globally
+//
+// Namespace:       `core`
+//
+// ========================================================================
+
+
+// Base
+// ========================================================================
+
+$core-font-size         = 62.5%
+$core-font-weight       = 400
+$core-lineheight        = 1.6
+$core-width             = 96.5rem
+$core-nav-height        = 5.2rem
+$core-radius            = .4rem
+$core-radius-inner      = .2rem
+$core-border-width      = .1rem
+
+$z-index-0              = 0
+$z-index-1              = 100
+$z-index-2              = 200
+$z-index-3              = 300
+$z-index-4              = 400
+$z-index-5              = 500
+$z-index-6              = 600
+$z-index-7              = 700
+$z-index-8              = 800
+$z-index-9              = 900
+$z-index-10             = 1000
+
+
+// Font
+// ========================================================================
+
+$core-font-family       = 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', 'Oxygen', 'Cantarell', sans-serif
+$core-mono-font-family  = 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', 'Monaco', monospace
+
+
+// Color
+// ========================================================================
+
+/**
+ * Greyscale
+ */
+$color-black            = #0a0a0a
+$color-grey-100         = #222831
+$color-grey-200         = lighten($color-grey-100, 5%)
+$color-grey-300         = lighten($color-grey-100, 10%)
+$color-grey-400         = lighten($color-grey-100, 20%)
+$color-grey-500         = lighten($color-grey-100, 30%)
+$color-grey-600         = lighten($color-grey-100, 40%)
+$color-grey-700         = lighten($color-grey-100, 50%)
+$color-grey-800         = lighten($color-grey-100, 74%)
+$color-grey-900         = lighten($color-grey-100, 80%)
+$color-grey-1000        = lighten($color-grey-100, 94%)
+$color-white            = #fff
+
+/**
+ * Aliases for greyscale colors
+ */
+$grey-darker            = $color-grey-100
+$grey-dark              = $color-grey-200
+$color-grey             = $color-grey-300
+$grey-light             = $color-grey-600
+$grey-lighter           = $color-grey-700
+$grey-lightest          = $color-grey-800
+
+/**
+ * Swatch
+ */
+$color-blue             = #09f
+$color-green            = #50c878
+$color-purple           = #96c
+$color-red              = #f66
+$color-yellow           = spin(#fce473, -6deg)
+$color-orange           = #FF9800
+$color-teal             = #09c09c
+$color-primary          = #5778C6
+
+/**
+ * Inverted Swatch
+ */
+
+$color-blue-invert      = find-color-invert($color-blue)
+$color-green-invert     = find-color-invert($color-green)
+$color-purple-invert    = find-color-invert($color-purple)
+$color-red-invert       = find-color-invert($color-red)
+$color-yellow-invert    = find-color-invert($color-yellow)
+$color-orange-invert    = find-color-invert($color-orange)
+$color-teal-invert      = find-color-invert($color-teal)
+$color-primary-invert   = find-color-invert($color-primary)
+
+colors = {
+  blue: {
+    color: $color-blue,
+    invert: $color-blue-invert
+  },
+  green: {
+    color: $color-green,
+    invert: $color-green-invert
+  },
+  purple: {
+    color: $color-purple,
+    invert: $color-purple-invert
+  },
+  red: {
+    color: $color-red,
+    invert: $color-red-invert
+  },
+  yellow: {
+    color: $color-yellow,
+    invert: $color-yellow-invert
+  },
+  orange: {
+    color: $color-orange,
+    invert: $color-orange-invert
+  },
+  teal: {
+    color: $color-teal,
+    invert: $color-teal-invert
+  },
+  primary: {
+    color: $color-primary,
+    invert: $color-primary-invert
+  }
+}
+
+/**
+ * Variables
+ */
+$core-bg-color          = $color-white
+$core-text-color        = $color-black
+$core-text-color-invert = $color-white
+$core-meta-color        = $color-grey-700
+$core-link-color        = $color-primary
+$core-border-color      = $color-grey-900
+$core-menu-bg           = $color-white
+$core-blank-bg          = darken($core-menu-bg, 4%)

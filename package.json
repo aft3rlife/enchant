@@ -4,7 +4,9 @@
   "description": "It's CSS yo'",
   "author": "Marc Boisvert <marc@boisvert.design>",
   "license": "MIT",
-  "style": "src/torque.css",
+  "main": "dist/torque.css",
+  "style": "src/torque.styl",
+  "browserslist": "last 2 versions",
   "scripts": {
     "dev": "webpack",
     "prod": "NODE_ENV=production webpack"
@@ -27,6 +29,8 @@
     "postcss-nested": "^2.1.2",
     "postcss-normalize": "^4.0.0",
     "style-loader": "^0.19.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
     "webpack": "^3.8.1"
   }
 }

@@ -1,0 +1,107 @@
+// Name:            Grid
+// Description:     Styles for the grid system
+//
+// Namespace:       `grid`
+//
+// Modifiers:       ``
+//
+// States:          ``
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+gutter-width        = 2rem
+outer-margin        = 2rem
+gutter-compensation = calc((gutter-width * .5) * -1)
+half-gutter-width   = calc(gutter-width * .5)
+xs-min              = 30em
+sm-min              = 48em
+md-min              = 64em
+lg-min              = 75em
+container-sm        = calc(sm-min + gutter-width)
+container-md        = calc(md-min + gutter-width)
+container-lg        = calc(lg-min + gutter-width)
+
+grid-size-10        = percentage(1/12)
+grid-size-20        = percentage(2/12)
+grid-size-25        = percentage(3/12)
+grid-size-33        = percentage(4/12)
+grid-size-40        = percentage(5/12)
+grid-size-50        = percentage(6/12)
+grid-size-60        = percentage(7/12)
+grid-size-66        = percentage(8/12)
+grid-size-75        = percentage(9/12)
+grid-size-80        = percentage(10/12)
+grid-size-90        = percentage(11/12)
+grid-size-100       = 100%
+
+breakpoints = {
+  "xs": xs-min,
+  "sm": sm-min,
+  "md": md-min,
+  "lg": lg-min
+}
+
+grid-sizes = {
+  "1": grid-size-10,
+  "2": grid-size-20,
+  "3": grid-size-25,
+  "4": grid-size-33,
+  "5": grid-size-40,
+  "6": grid-size-50,
+  "7": grid-size-60,
+  "8": grid-size-66,
+  "9": grid-size-75,
+  "10": grid-size-80,
+  "11": grid-size-90,
+  "12": grid-size-100
+}
+
+// Component: Grid
+// ========================================================================
+
+.container,
+.container--fluid
+  position relative
+  margin-right auto
+  margin-left auto
+  
+.container
+  width $core-width
+  
+.container--fluid
+  padding-right outer-margin
+  padding-left outer-margin
+
+.row
+  display flex
+  flex 0 1 auto
+  flex-flow row wrap
+  justify-content flex-start
+  margin-right gutter-compensation
+  margin-left gutter-compensation
+
+.col
+  flex 1 0 auto
+  padding-right half-gutter-width
+  padding-left half-gutter-width
+  max-width 100%
+  
+  for breakpoint, $breakpoint-size in breakpoints
+    for name, size in grid-sizes
+      @media (min-width: $breakpoint-size)
+        &.col__{breakpoint}-{name}
+          flex-basis size
+          max-width size
+
+        &.col__{breakpoint}--offset-{name}
+          margin-left size
+      
+  .col--sa
+    justify-content space-around
+    
+  .col--sb
+    justify-content space-between

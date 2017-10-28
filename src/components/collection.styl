@@ -1,0 +1,50 @@
+// Name:            Collection
+// Description:     Styles for Collection
+//
+// Namespace:       `collection`
+//
+// Modifiers:       ``
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$collection-bg-color = darken($core-bg-color, 10%)
+$collection-color = $core-text-color
+$collection-active-bg-color = $color-primary
+$collection-active-color = alpha($core-text-color, .4)
+$collection-padding-x = 2rem
+$collection-padding-y = 2rem
+$collection-border = $core-border-width solid $core-border-color
+$collection-radius = $core-radius
+
+// Component: Component
+// ========================================================================
+
+.collection
+  position relative
+  display flex
+  flex-direction column
+  padding 0
+  margin 0
+  border $collection-border
+  border-radius $collection-radius
+  overflow hidden
+  
+  .collection__item
+    position relative
+    display block
+    width 100%
+    margin-bottom .1rem
+    padding $collection-padding-y $collection-padding-x
+    background-color $collection-bg-color
+    color $collection-color   
+    border $collection-border
+    
+    &:first-child
+      border-top-radius($collection-radius)
+      
+    &:last-child
+      border-bottom-radius($collection-radius)

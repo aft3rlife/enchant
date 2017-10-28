@@ -1,0 +1,231 @@
+// Animations
+@keyframes loading
+  0%
+    transform rotate(0deg)
+  100%
+    transform rotate(360deg)
+
+// Divider
+.divider
+  border-top: $core-border-width solid $core-border-color
+  display: block
+  height: .1rem
+  margin: 1rem 0
+  position: relative
+
+  &[data-content]::before
+    background: $core-menu-bg
+    color: $color-grey-300
+    content: attr(data-content)
+    display: inline-block
+    font-size: $font-tiny
+    font-weight: 700
+    text-transform: uppercase
+    padding-right: .8rem
+    transform: translateY(-1.4rem)
+
+
+// Loading
+.loading
+  color transparent !important
+  min-height .8rem
+  pointer-events none
+  position relative
+  &::after
+    animation loading 500ms infinite linear
+    border .2rem solid $color-primary
+    border-radius 50%
+    border-right-color transparent
+    border-top-color transparent
+    content ""
+    display block
+    height .8rem
+    left 50%
+    position absolute
+    top 0
+    width .8rem
+    z-index $z-index-0
+
+  &.loading-lg
+    min-height 6rem
+    &::after
+      height 6rem
+      width 6rem
+      margin-left -1rem
+      border-width .4rem
+
+// Position
+.clearfix
+  clearfix()
+.float--left
+  float left !important
+.float--right
+  float right !important
+
+.rel
+  position relative
+.abs
+  position absolute
+.fixed
+  position fixed
+.centered
+  display block
+  float none
+  margin-left auto
+  margin-right auto
+
+// Spacing
+
+spacing-sizes = {
+  "0": 0rem,
+  "10": 1rem,
+  "20": 2rem,
+  "40": 4rem
+}
+
+for name, size in spacing-sizes
+  .m-{name}
+    margin: size !important
+  .mt-{name}
+    margin-top size !important
+  .mr-{name}
+    margin-right size !important
+  .mb-{name}
+    margin-bottom size !important
+  .ml-{name}
+    margin-left size !important
+  .p-{name}
+    padding: size !important
+  .pt-{name}
+    padding-top size !important
+  .pr-{name}
+    padding-right size !important
+  .pb-{name}
+    padding-bottom size !important
+  .pl-{name}
+    padding-left size !important
+
+// Display
+.block
+  display block
+.inline
+  display inline
+.inline-block
+  display inline-block
+.hide
+  display none !important
+.visible
+  visibility visible
+.invisible
+  visibility hidden
+.text--hide
+  background transparent
+  border 0
+  color transparent
+  font-size 0
+  line-height 0
+  text-shadow none
+.text--assistive
+  border 0
+  clip rect(0,0,0,0)
+  height .1rem
+  margin -.1rem
+  overflow hidden
+  padding 0
+  position absolute
+  width .1rem
+  
+// Text
+for name, color in colors
+  color = color['color']
+  .text--{name}
+    color color !important
+
+.text--xxl
+  font-size $font-1
+  line-height 1.2
+  margin-bottom ($font-1 - ($font-1 / 2))rem
+
+.text--xl
+  font-size $font-3
+  line-height 1.25
+  margin-bottom ($font-3 - ($font-3 / 2))rem
+
+.text--lg
+  font-size $font-5
+  line-height 1.3
+  margin-bottom ($font-5 - ($font-5 / 2))rem
+
+.text--md
+  font-size $font-6
+  line-height 1.35
+  margin-bottom ($font-6 - ($font-6 / 2))rem
+
+.text--sm
+  font-size $font-9
+  line-height 1.5
+  margin-bottom ($font-9 - ($font-9 / 2))rem
+
+.text--xs
+  font-size $font-10
+  line-height 1.4
+  margin-bottom ($font-10 - ($font-10 / 2))rem
+
+.text--left
+  text-align left
+.text--right
+  text-align right
+.text--center
+  text-align center
+.text--justify
+  text-align justify
+
+.text--lowercase
+  text-transform lowercase
+.text--uppercase
+  text-transform uppercase
+  letter-spacing: .1rem
+.text--capitalize
+  text-transform capitalize
+
+.text--normal
+  font-weight 400
+.text--bold
+  font-weight 700
+.text--black
+  font-weight 900
+.text--italic
+  font-style italic
+
+.text--ellipsis
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+.text--clip
+  overflow hidden
+  text-overflow clip
+  white-space nowrap
+.text--break
+  hyphens auto
+  word-break break-word
+  word-wrap break-word
+.hand
+  cursor pointer
+
+// Shadow
+.shadow-0
+  shadow(0)
+.shadow-1
+  shadow-variant(.1rem)
+.shadow-2
+  shadow-variant(.2rem)
+.shadow-3
+  shadow-variant(.3rem)
+.shadow-4
+  shadow-variant(.4rem)
+
+// Shapes
+.rounded
+  border-radius $core-radius
+.circle
+  border-radius 50rem

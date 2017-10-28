@@ -1,0 +1,109 @@
+// Name            Typography
+// Description     Typographic styles
+//
+// Namespace       `type`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$font-1 = 4.8rem
+$font-2 = 4rem
+$font-3 = 3.6rem
+$font-4 = 3rem
+$font-5 = 2.4rem
+$font-6 = 1.8rem
+$font-7 = 1.6rem
+$font-8 = 1.4rem
+$font-9 = 1.2rem
+$font-10 = 1.1rem
+
+$font-tiny = $font-9
+$font-small = $font-8
+$font-normal = $font-7
+$font-medium = $font-6
+$font-mlarge = $font-5
+$font-large = $font-4
+$font-huge = $font-2
+
+// Component Typography
+// ========================================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-weight 400
+
+h1
+  font-size $font-1
+  line-height 1.2
+  margin-bottom ($font-1 - ($font-1 / 2))rem
+
+h2
+  font-size $font-2
+  line-height 1.25
+  margin-bottom ($font-2 - ($font-2 / 2))rem
+
+h3
+  font-size $font-3
+  line-height 1.3
+  margin-bottom ($font-3 - ($font-3 / 2))rem
+
+h4
+  font-size $font-4
+  line-height 1.35
+  margin-bottom ($font-4 - ($font-4 / 2))rem
+
+h5
+  font-size $font-5
+  line-height 1.5
+  margin-bottom ($font-5 - ($font-5 / 2))rem
+
+h6
+  font-size $font-6
+  line-height 1.4
+  margin-bottom ($font-6 - ($font-6 / 2))rem
+
+p
+  margin-top 0
+
+b,
+strong
+  font-weight 700
+
+blockquote
+  margin 0
+  padding 1rem 0 .5rem 1.75rem
+  color $color-grey-light
+  font-style italic
+  border-left .5rem solid $color-grey-lightest
+
+  cite
+    color $color-grey-lighter
+
+code
+  background $color-grey-lightest
+  border-radius $core-radius
+  font-size 86%
+  margin 0 .2rem
+  padding .2rem .5rem
+  white-space nowrap
+
+pre
+  background $color-grey-lightest
+  border-left .3rem solid $color-primary
+  border-radius $core-radius
+  font-family $type-font-mono
+  box-shadow 0 .1rem .2rem transparentize($color-black, .8)
+
+  & > code
+    background transparent
+    border-radius 0
+    display block
+    padding 1rem 1.5rem
+    white-space pre

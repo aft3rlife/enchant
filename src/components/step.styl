@@ -1,0 +1,60 @@
+.step
+  display flex
+  flex-wrap nowrap
+  list-style none
+  margin 0
+  width 100%
+
+  .step-item
+    flex 1 1 0
+    margin 0
+    min-height 2rem
+    text-align center
+    position relative
+
+    &:not(:first-child)::before
+      background $color-primary
+      content ""
+      height .2rem
+      left -50%
+      position absolute
+      top .9rem
+      width 100%
+
+
+    span
+      color $color-grey-700
+      display inline-block
+      padding 2rem 1rem 0
+      text-decoration none
+
+      &::before
+        background $color-primary
+        border .2rem solid $color-primary
+        border-radius 50%
+        content ""
+        display block
+        height 1.2rem
+        left 50%
+        position absolute
+        top .4rem
+        transform translateX(-50%)
+        width 1.2rem
+        z-index $z-index-1
+
+
+    &.active
+      span
+        color $core-text-color
+        &::before
+          background $color-primary
+          border .2rem solid $color-white
+
+      & ~ .step-item
+        &::before
+          background $color-grey-900
+
+        span
+          &::before
+            background $color-grey-900
+            border-color $color-white
