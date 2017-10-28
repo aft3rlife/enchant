@@ -1,3 +1,8 @@
+:root {
+  --bodyBackgroundColor: var(--colorWhite);
+  --bodyColor: var(--colorGrey-200);
+}
+
 *,
 *::after,
 *::before {
@@ -10,8 +15,8 @@ html {
 
 body {
   margin: 0;
-  background: #fff;
-  color: var(--colorBlack);
+  background: var(--bodyBackgroundColor);
+  color: var(--bodyColor);
   font-size: 1.6rem;
   font-weight: 400;
 }
