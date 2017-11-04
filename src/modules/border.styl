@@ -1,2 +1,86 @@
-.border
-  border $core-border-width solid $core-border-color
+$border-style = $core-border-width solid $core-border-color
+$border-options = {
+  'top': 't',
+  'right': 'r',
+  'bottom': 'b',
+  'left': 'l'
+}
+
+.b
+  border: $border-style
+
+for $direction, $symbol in $border-options
+  .b{$symbol}
+    border-{$direction}: $border-style
+
+/**
+ * Border Radius: .b{orientation}-r{radius}
+ */
+
+/* Top */
+.bt-r-0
+  border-top-left-radius 0
+  border-top-right-radius 0
+
+.bt-r-2
+  border-top-left-radius .2rem
+  border-top-right-radius .2rem
+
+.bt-r-4
+  border-top-left-radius .4rem
+  border-top-right-radius .4rem
+
+.bt-r-6
+  border-top-left-radius .6rem
+  border-top-right-radius .6rem
+
+/* Right */
+.br-r-0
+  border-top-right-radius 0
+  border-bottom-right-radius 0
+
+.br-r-2
+  border-top-right-radius .2rem
+  border-bottom-right-radius .2rem
+
+.br-r-4
+  border-top-right-radius .4rem
+  border-bottom-right-radius .4rem
+
+.br-r-6
+  border-top-right-radius .6rem
+  border-bottom-right-radius .6rem
+
+/* Bottom */
+.bb-r-0
+  border-bottom-left-radius 0
+  border-bottom-right-radius 0
+
+.bb-r-2
+  border-bottom-left-radius .2rem
+  border-bottom-right-radius .2rem
+
+.bb-r-4
+  border-bottom-left-radius .4rem
+  border-bottom-right-radius .4rem
+
+.bb-r-6
+  border-bottom-left-radius .6rem
+  border-bottom-right-radius .6rem
+
+/* Left */
+.bl-r-0
+  border-top-left-radius 0
+  border-bottom-left-radius 0
+
+.bl-r-2
+  border-top-left-radius .2rem
+  border-bottom-left-radius .2rem
+
+.bl-r-4
+  border-top-left-radius .4rem
+  border-bottom-left-radius .4rem
+
+.bl-r-6
+  border-top-left-radius .6rem
+  border-bottom-left-radius .6rem
